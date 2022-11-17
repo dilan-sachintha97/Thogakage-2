@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="itemManagementContext" prefHeight="423.0" prefWidth="656.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.abcjava.pos.controller.ItemManagementFormController">
+   <children>
+      <JFXButton layoutX="15.0" layoutY="29.0" onAction="#btnBackToHome" style="-fx-background-color: #34495e;" text="Back To Home" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="OPEN_HAND" />
+         </cursor>
+      </JFXButton>
+      <Separator layoutX="125.0" layoutY="54.0" prefHeight="0.0" prefWidth="347.0" />
+      <Label layoutX="125.0" layoutY="29.0" text="Item Form" textFill="#2c3e50">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Label>
+      <JFXButton layoutX="535.0" layoutY="29.0" onAction="#btnAddNewItem" style="-fx-background-color: #34495e;" text="+ New Item" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="OPEN_HAND" />
+         </cursor>
+      </JFXButton>
+      <TextField fx:id="txtCode" layoutX="15.0" layoutY="78.0" prefHeight="25.0" prefWidth="124.0" promptText="Code" />
+      <TextField fx:id="txtDescription" layoutX="157.0" layoutY="78.0" promptText="Description" />
+      <TextField fx:id="txtUnitPrice" layoutX="323.0" layoutY="78.0" promptText="Unit Price" />
+      <TextField fx:id="txtQtyOnHand" layoutX="492.0" layoutY="78.0" promptText="QTY On Hand" />
+      <JFXButton fx:id="btnSaveItem" layoutX="500.0" layoutY="113.0" onAction="#btnSaveItemOnAction" prefHeight="25.0" prefWidth="141.0" style="-fx-background-color: #34495e;" text="Save Item" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="OPEN_HAND" />
+         </cursor>
+      </JFXButton>
+      <TextField fx:id="txtSearchItem" layoutX="15.0" layoutY="113.0" prefHeight="25.0" prefWidth="457.0" promptText="Search Item" />
+      <TableView fx:id="tblItemDetails" layoutX="15.0" layoutY="153.0" prefHeight="228.0" prefWidth="627.0">
+         <columns>
+            <TableColumn fx:id="colCode" prefWidth="95.0" text="Code" />
+            <TableColumn fx:id="colDescription" prefWidth="149.0" text="Description" />
+            <TableColumn fx:id="colUnitPrice" prefWidth="157.0" text="Unit Price" />
+            <TableColumn fx:id="colQtyOnHand" prefWidth="129.0" text="QTY On Hand" />
+            <TableColumn fx:id="colOptions" prefWidth="96.0" text="Options" />
+         </columns>
+      </TableView>
+   </children>
+</AnchorPane>

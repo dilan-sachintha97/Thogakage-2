@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="oderDetailsFormContext" prefHeight="400.0" prefWidth="660.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.abcjava.pos.controller.OderDetailsFormController">
+   <children>
+      <JFXButton layoutX="21.0" layoutY="22.0" onAction="#btnBackToHomeOnAction" style="-fx-background-color: #34495e;" text="Back To Home" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="OPEN_HAND" />
+         </cursor>
+      </JFXButton>
+      <Label layoutX="131.0" layoutY="22.0" text="Oder Details Form" textFill="#2c3e50">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Label>
+      <Separator layoutX="131.0" layoutY="47.0" prefHeight="0.0" prefWidth="347.0" />
+      <TableView fx:id="tblOderDetails" layoutX="31.0" layoutY="100.0" prefHeight="235.0" prefWidth="606.0">
+        <columns>
+          <TableColumn fx:id="colOderId" prefWidth="82.0" text="Order Id" />
+          <TableColumn fx:id="colCustomer" prefWidth="104.0" text="Customer" />
+            <TableColumn fx:id="colDate" prefWidth="184.0" text="Date" />
+            <TableColumn fx:id="colTotal" prefWidth="108.0" text="Total" />
+            <TableColumn fx:id="colOptions" prefWidth="127.0" text="Options" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

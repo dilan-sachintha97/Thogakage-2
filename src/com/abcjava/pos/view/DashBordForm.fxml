@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="dashBordContext" prefHeight="284.0" prefWidth="625.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.abcjava.pos.controller.DashBordFormController">
+   <children>
+      <JFXButton layoutX="22.0" layoutY="65.0" onAction="#btnCustomerManagementOnAction" prefHeight="77.0" prefWidth="182.0" style="-fx-background-color: #2ecc71;" text="Customer Management" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="OPEN_HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton layoutX="222.0" layoutY="65.0" onAction="#btnItemManagementOnAction" prefHeight="77.0" prefWidth="182.0" style="-fx-background-color: #1abc9c;" text="Item Management" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="OPEN_HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton layoutX="418.0" layoutY="65.0" onAction="#btnOrderManagementOnAction" prefHeight="77.0" prefWidth="182.0" style="-fx-background-color: #9b59b6;" text="Order Management" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="OPEN_HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton layoutX="23.0" layoutY="159.0" onAction="#btnPlaceOrderManagement" prefHeight="77.0" prefWidth="580.0" style="-fx-background-color: #34495e;" text="Place Oder" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="OPEN_HAND" />
+         </cursor>
+      </JFXButton>
+      <Label layoutX="515.0" layoutY="259.0" text="Version : 1.0.0 " />
+      <Label layoutX="23.0" layoutY="259.0" text="Developed by : ABCJava" />
+      <Label layoutX="22.0" layoutY="29.0" text="Thogakade - ABCJava">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblDateAndTime" alignment="CENTER_RIGHT" layoutX="408.0" layoutY="31.0" prefHeight="20.0" prefWidth="191.0" text="2022-11-05       10 : 25 : 26" textAlignment="RIGHT">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

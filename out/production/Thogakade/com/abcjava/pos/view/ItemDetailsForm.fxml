@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane fx:id="itemDetailsContext" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.abcjava.pos.controller.ItemDetailsFormController">
+   <children>
+      <JFXButton layoutX="21.0" layoutY="14.0" onAction="#btnBackToHomeOnAction" style="-fx-background-color: #34495e;" text="Back To Home" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="OPEN_HAND" />
+         </cursor>
+      </JFXButton>
+      <TableView fx:id="tblItemDetails" layoutX="21.0" layoutY="65.0" prefHeight="235.0" prefWidth="553.0">
+         <columns>
+            <TableColumn fx:id="colItemCode" prefWidth="82.0" text="Item Code" />
+            <TableColumn fx:id="colUnitPrice" prefWidth="104.0" text="Unit price" />
+            <TableColumn fx:id="colQty" prefWidth="203.0" text="Qty" />
+            <TableColumn fx:id="colTotal" prefWidth="159.0" text="Total" />
+         </columns>
+      </TableView>
+   </children>
+</AnchorPane>

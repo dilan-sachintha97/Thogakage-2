@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="placeOrderFormContext" prefHeight="524.0" prefWidth="733.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.abcjava.pos.controller.PlaceOrderFormController">
+   <children>
+      <JFXButton layoutX="24.0" layoutY="14.0" onAction="#btnBackToHomeOnAction" style="-fx-background-color: #34495e;" text="Back To Home" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="OPEN_HAND" />
+         </cursor>
+      </JFXButton>
+      <Label layoutX="134.0" layoutY="14.0" text="Place Order Form" textFill="#2c3e50">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Label>
+      <Separator layoutX="134.0" layoutY="39.0" prefHeight="0.0" prefWidth="347.0" />
+      <TextField fx:id="txtOrderId" disable="true" layoutX="24.0" layoutY="55.0" prefHeight="25.0" prefWidth="129.0" promptText="Order Id" />
+      <TextField fx:id="txtOrderDate" disable="true" layoutX="583.0" layoutY="55.0" prefHeight="25.0" prefWidth="129.0" promptText="Order Date" />
+      <Label layoutX="24.0" layoutY="90.0" text="Customer Details" textFill="#e14d08">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="24.0" layoutY="148.0" text="Item Details" textFill="#e14d08">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="cmbCustomerId" layoutX="24.0" layoutY="109.0" prefHeight="25.0" prefWidth="116.0" promptText="Customer Id" />
+      <TextField fx:id="txtName" disable="true" layoutX="157.0" layoutY="109.0" prefHeight="25.0" prefWidth="151.0" promptText="Name" />
+      <TextField fx:id="txtAddress" disable="true" layoutX="327.0" layoutY="109.0" prefHeight="25.0" prefWidth="213.0" promptText="Address" />
+      <TextField fx:id="txtSalary" disable="true" layoutX="561.0" layoutY="109.0" prefHeight="25.0" prefWidth="151.0" promptText="Salary" />
+      <ComboBox fx:id="cmbItemId" layoutX="23.0" layoutY="167.0" prefHeight="25.0" prefWidth="116.0" promptText="Item Code" />
+      <TextField fx:id="txtDescription" disable="true" layoutX="156.0" layoutY="167.0" prefHeight="25.0" prefWidth="151.0" promptText="Description" />
+      <TextField fx:id="txtUnitPrice" disable="true" layoutX="326.0" layoutY="167.0" prefHeight="25.0" prefWidth="105.0" promptText="Unit Price" />
+      <TextField fx:id="txtQty" layoutX="560.0" layoutY="167.0" prefHeight="25.0" prefWidth="151.0" promptText="QTY" />
+      <TextField fx:id="txtQtyOnHand" disable="true" layoutX="445.0" layoutY="167.0" prefHeight="25.0" prefWidth="105.0" promptText="QTY On Hand" />
+      <JFXButton layoutX="631.0" layoutY="200.0" onAction="#btnAddToCartOnAction" style="-fx-background-color: #34495e;" text="Add To Cart" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="OPEN_HAND" />
+         </cursor>
+      </JFXButton>
+      <TableView fx:id="tblCart" layoutX="28.0" layoutY="240.0" prefHeight="200.0" prefWidth="681.0">
+        <columns>
+          <TableColumn fx:id="colItemCode" prefWidth="83.0" text="Item Code" />
+          <TableColumn fx:id="colDescription" prefWidth="216.0" text="Description" />
+            <TableColumn fx:id="colUnitPrice" prefWidth="95.0" text="Unit price" />
+            <TableColumn fx:id="colQty" prefWidth="84.0" text="QTY" />
+            <TableColumn fx:id="colTotal" prefWidth="104.0" text="Total" />
+            <TableColumn fx:id="colOption" prefWidth="98.0" text="Option" />
+        </columns>
+      </TableView>
+      <Label layoutX="29.0" layoutY="458.0" text="Total" textFill="#e00909">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblTotal" layoutX="89.0" layoutY="458.0" text="0.00" textFill="#e00909">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font>
+      </Label>
+      <JFXButton layoutX="631.0" layoutY="460.0" onAction="#btnPlaceOrderOnAction" style="-fx-background-color: #2ecc71;" text="Place Order" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="OPEN_HAND" />
+         </cursor>
+      </JFXButton>
+   </children>
+</AnchorPane>

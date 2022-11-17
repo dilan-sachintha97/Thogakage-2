@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="customerManagementContext" prefHeight="400.0" prefWidth="661.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.abcjava.pos.controller.CustomerManagementFormController">
+   <children>
+      <JFXButton layoutX="14.0" layoutY="14.0" onAction="#btnBackToHome" style="-fx-background-color: #34495e;" text="Back To Home" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="OPEN_HAND" />
+         </cursor>
+      </JFXButton>
+      <Separator layoutX="124.0" layoutY="39.0" prefHeight="0.0" prefWidth="347.0" />
+      <Label layoutX="124.0" layoutY="14.0" text="Customer Form" textFill="#2c3e50">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Label>
+      <JFXButton layoutX="534.0" layoutY="14.0" onAction="#btnAddNewCustomer" style="-fx-background-color: #34495e;" text="+ New Customer" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="OPEN_HAND" />
+         </cursor>
+      </JFXButton>
+      <TextField fx:id="txtId" layoutX="14.0" layoutY="63.0" prefHeight="25.0" prefWidth="124.0" promptText="Customer ID" />
+      <TextField fx:id="txtName" layoutX="156.0" layoutY="63.0" promptText="Name" />
+      <TextField fx:id="txtAddress" layoutX="322.0" layoutY="63.0" promptText="Address" />
+      <TextField fx:id="txtSalary" layoutX="491.0" layoutY="63.0" promptText="Salary" />
+      <JFXButton fx:id="btnSaveCustomer" layoutX="499.0" layoutY="98.0" onAction="#btnSaveCustomerOnAction" prefHeight="25.0" prefWidth="141.0" style="-fx-background-color: #34495e;" text="Save Customer" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="OPEN_HAND" />
+         </cursor>
+      </JFXButton>
+      <TextField fx:id="txtSearchCustomer" layoutX="14.0" layoutY="98.0" prefHeight="25.0" prefWidth="457.0" promptText="Search Customer" />
+      <TableView fx:id="tblCustomerDetails" layoutX="14.0" layoutY="138.0" prefHeight="228.0" prefWidth="627.0">
+        <columns>
+          <TableColumn fx:id="colId" prefWidth="95.0" text="ID" />
+          <TableColumn fx:id="colName" prefWidth="149.0" text="Name" />
+            <TableColumn fx:id="colAddress" prefWidth="157.0" text="Address" />
+            <TableColumn fx:id="colSalary" prefWidth="129.0" text="Salary" />
+            <TableColumn fx:id="colOptions" prefWidth="96.0" text="Options" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>
