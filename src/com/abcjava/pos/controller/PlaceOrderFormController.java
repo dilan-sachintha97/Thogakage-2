@@ -231,7 +231,7 @@ public class PlaceOrderFormController {
         Order order = new Order(txtOrderId.getText(),
                 new Date(),
                 Double.parseDouble(lblTotal.getText()),
-                cmbItemId.getValue(),
+                cmbCustomerId.getValue(),
                 itemDetailsList);
 
         ordersList.add(order);
