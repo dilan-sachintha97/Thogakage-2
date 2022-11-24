@@ -151,7 +151,7 @@ public class CustomerManagementFormController {
                 statement.setDouble(4,customer.getSalary());
 
                 //step 05 -> execute statement
-                int isSaved = statement.executeUpdate(sql);
+                int isSaved = statement.executeUpdate();
 
                 if (isSaved > 0) {
                     searchCustomers(searchText);
