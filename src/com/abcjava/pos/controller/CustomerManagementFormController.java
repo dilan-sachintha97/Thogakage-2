@@ -90,22 +90,34 @@ public class CustomerManagementFormController {
                         button
                 );
                 tmList.add(customerTm);
-//                button.setOnAction(event -> {
-//                    // System.out.println(c.getName());
-//                    Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "Are you sure  want to delete this customer ?",
-//                            ButtonType.YES, ButtonType.NO);
-//                    Optional<ButtonType> buttonType = alert.showAndWait();
-//                    if (buttonType.get() == ButtonType.YES) {
-//                        boolean isDeleted = Database.customerList.remove(c);
-//                        if (isDeleted) {
-//                            searchCustomers(searchText);
-//                            new Alert(Alert.AlertType.INFORMATION, "Customer Deleted").show();
-//                        } else {
-//                            new Alert(Alert.AlertType.WARNING, "Something Wrong!").show();
-//                        }
-//                    }
-//
-//                });
+                button.setOnAction(event -> {
+                    // System.out.println(c.getName());
+                    Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "Are you sure  want to delete this customer ?",
+                            ButtonType.YES, ButtonType.NO);
+                    Optional<ButtonType> buttonType = alert.showAndWait();
+                    if (buttonType.get() == ButtonType.YES) {
+
+                        try{
+                            Class.forName("com.mysql.cj.jdbc.Driver");
+                            Connection connection1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/Thogakade", "root", "7911");
+                            String sql1 = "DELETE FROM Customer WHERE id=?";
+                            PreparedStatement statement1 = connection1.prepareStatement(sql1);
+                            statement1.setString(1,customerTm.getId());
+
+                            if(statement1.executeUpdate() > 0){
+                                searchCustomers(searchText);
+                                new Alert(Alert.AlertType.INFORMATION, "Customer Deleted").show();
+                            }else {
+                                new Alert(Alert.AlertType.WARNING, "Something Wrong!").show();
+                            }
+
+                        }catch (ClassNotFoundException | SQLException e){
+                            e.printStackTrace();
+                        }
+
+                    }
+
+                });
             }
         }catch (ClassNotFoundException | SQLException e){
             e.printStackTrace();

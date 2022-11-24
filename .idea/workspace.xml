@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="250f04df-20ff-418f-842d-e907ae63962e" name="Changes" comment="2">
+    <list default="true" id="250f04df-20ff-418f-842d-e907ae63962e" name="Changes" comment="3">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Thogakade/com/abcjava/pos/controller/CustomerManagementFormController.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/abcjava/pos/controller/CustomerManagementFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/abcjava/pos/controller/CustomerManagementFormController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -148,7 +147,8 @@
       <workItem from="1669286765866" duration="35000" />
       <workItem from="1669287763827" duration="3811000" />
       <workItem from="1669293816537" duration="6000" />
-      <workItem from="1669294808806" duration="955000" />
+      <workItem from="1669294808806" duration="1006000" />
+      <workItem from="1669302694833" duration="1036000" />
     </task>
     <task id="LOCAL-00001" summary="set ui for customer">
       <created>1667655387696</created>
@@ -458,7 +458,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669294817632</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="3">
+      <created>1669301905833</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1669301905833</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -495,23 +502,12 @@
     <MESSAGE value="check stock before add to cart" />
     <MESSAGE value="4" />
     <MESSAGE value="created oder details form" />
-    <MESSAGE value="3" />
     <MESSAGE value="completed project" />
     <MESSAGE value="mysql connector added" />
     <MESSAGE value="done sql connection" />
     <MESSAGE value="1" />
     <MESSAGE value="2" />
-    <option name="LAST_COMMIT_MESSAGE" value="2" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/abcjava/pos/controller/CustomerManagementFormController.java</url>
-          <line>92</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="3" />
+    <option name="LAST_COMMIT_MESSAGE" value="3" />
   </component>
 </project>
