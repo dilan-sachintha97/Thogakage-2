@@ -4,8 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="250f04df-20ff-418f-842d-e907ae63962e" name="Changes" comment="mysql connector added">
+    <list default="true" id="250f04df-20ff-418f-842d-e907ae63962e" name="Changes" comment="done sql connection">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/ff817021-808d-46ce-9ae7-b850cebae465.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/ff817021-808d-46ce-9ae7-b850cebae465/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/ff817021-808d-46ce-9ae7-b850cebae465/storage_v2/_src_/schema/mysql.osA4Bg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/ff817021-808d-46ce-9ae7-b850cebae465/storage_v2/_src_/schema/performance_schema.kIw0nw.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/ff817021-808d-46ce-9ae7-b850cebae465/storage_v2/_src_/schema/sys.zb4BAA.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Thogakade/com/abcjava/pos/controller/CustomerManagementFormController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Thogakade/com/abcjava/pos/controller/CustomerManagementFormController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Thogakade/com/abcjava/pos/controller/PlaceOrderFormController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Thogakade/com/abcjava/pos/controller/PlaceOrderFormController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/abcjava/pos/controller/CustomerManagementFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/abcjava/pos/controller/CustomerManagementFormController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -142,7 +149,10 @@
       <workItem from="1669108428794" duration="115000" />
       <workItem from="1669139205142" duration="492000" />
       <workItem from="1669225652200" duration="168000" />
-      <workItem from="1669279236882" duration="3387000" />
+      <workItem from="1669279236882" duration="4173000" />
+      <workItem from="1669286150053" duration="17000" />
+      <workItem from="1669286765866" duration="35000" />
+      <workItem from="1669287763827" duration="3472000" />
     </task>
     <task id="LOCAL-00001" summary="set ui for customer">
       <created>1667655387696</created>
@@ -431,7 +441,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669225720943</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="done sql connection">
+      <created>1669282947806</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1669282947806</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -449,7 +466,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="set ui for customer" />
     <MESSAGE value="set date and time into dashboard" />
     <MESSAGE value="delete customer from table" />
     <MESSAGE value="update customer from table" />
@@ -474,6 +490,7 @@
     <MESSAGE value="completed project" />
     <MESSAGE value="1" />
     <MESSAGE value="mysql connector added" />
-    <option name="LAST_COMMIT_MESSAGE" value="mysql connector added" />
+    <MESSAGE value="done sql connection" />
+    <option name="LAST_COMMIT_MESSAGE" value="done sql connection" />
   </component>
 </project>
