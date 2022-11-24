@@ -4,6 +4,7 @@ import com.abcjava.pos.db.Database;
 import com.abcjava.pos.modal.Customer;
 import com.abcjava.pos.view.tm.CustomerTm;
 import com.jfoenix.controls.JFXButton;
+import com.mysql.cj.jdbc.Driver;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -15,6 +16,10 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.Optional;
 
 public class CustomerManagementFormController {
@@ -115,15 +120,39 @@ public class CustomerManagementFormController {
         );
 
         if (btnSaveCustomer.getText().equalsIgnoreCase("Save Customer")) {
-            // save customer in arrayList
-            boolean isSaved = Database.customerList.add(customer);
-            if (isSaved) {
-                searchCustomers(searchText);
-                clearField();
-                new Alert(Alert.AlertType.INFORMATION, "Customer Saved").show();
-            } else {
-                new Alert(Alert.AlertType.WARNING, "Something Wrong!").show();
+
+            //Save customer in database - mySQl
+
+            try {
+                //step 01 -> driver manager load to ram
+                Class.forName("com.mysql.cj.jdbc.Driver");
+
+                //step 02 -> create connection between javaApplication and mySql
+                Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/Thogakade", "root", "7911");
+
+                //step 03 -> create statement
+                Statement statement  = connection.createStatement();
+
+                //step 04 -> create query to statement
+                String sql = "INSERT INTO Customer VALUES('"+customer.getId()+"'"+customer.getName()+"'"+customer.getAddress()+"'"+customer.getSalary()+"')";
+
+                //step 05 -> execute statement
+                int isSaved = statement.executeUpdate(sql);
+
+                if (isSaved > 0) {
+                    searchCustomers(searchText);
+                    clearField();
+                    new Alert(Alert.AlertType.INFORMATION, "Customer Saved").show();
+                } else {
+                    new Alert(Alert.AlertType.WARNING, "Something Wrong!").show();
+                }
+
+            } catch (ClassNotFoundException | SQLException e) {
+                e.printStackTrace();
             }
+
+
+
         } else {
             //update customer
             for (int i = 0; i < Database.customerList.size(); i++) {
