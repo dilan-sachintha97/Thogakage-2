@@ -89,24 +89,38 @@ public class PlaceOrderFormController {
     }
 
     private void setItemDetailsToTextFields() {
-        for (Item item : Database.itemList) {
-            if (item.getCode().equals(cmbItemId.getValue())) {
-                txtDescription.setText(item.getDescription());
-                txtUnitPrice.setText(String.valueOf(item.getUnitPrice()));
-                txtQtyOnHand.setText(String.valueOf(item.getQtyOnHand()));
+        try{Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/Thogakade", "root", "7911");
+            String sql = "SELECT * FROM Item WHERE code=?";
+            PreparedStatement statement = connection.prepareStatement(sql);
+            statement.setString(1,cmbItemId.getValue());
+            ResultSet set = statement.executeQuery();
 
+            if(set.next()){
+                txtDescription.setText(set.getString(2));
+                txtUnitPrice.setText(String.valueOf(set.getDouble(3)));
+                txtQtyOnHand.setText(String.valueOf(set.getInt(4)));
             }
-        }
+        }catch (ClassNotFoundException | SQLException e){
+            e.printStackTrace();}
     }
 
     private void setCustomerDetailsToTextFields() {
-        for (Customer c : Database.customerList) {
-            if (c.getId().equals(cmbCustomerId.getValue())) {
-                txtName.setText(c.getName());
-                txtAddress.setText(c.getAddress());
-                txtSalary.setText(String.valueOf(c.getSalary()));
+        try{Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/Thogakade", "root", "7911");
+            String sql = "SELECT * FROM Customer WHERE id=?";
+            PreparedStatement statement = connection.prepareStatement(sql);
+            statement.setString(1,cmbCustomerId.getValue());
+            ResultSet set = statement.executeQuery();
+
+            if(set.next()){
+                txtName.setText(set.getString(2));
+                txtAddress.setText(set.getString(3));
+                txtSalary.setText(String.valueOf(set.getDouble(4)));
             }
-        }
+        }catch (ClassNotFoundException | SQLException e){
+            e.printStackTrace();}
+
     }
 
 
