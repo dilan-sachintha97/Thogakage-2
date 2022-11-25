@@ -15,6 +15,10 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.util.Optional;
 
 public class ItemManagementFormController {
@@ -135,11 +139,27 @@ public class ItemManagementFormController {
 
     private void setDataToDatabase() {
         Item item = new Item(txtCode.getText(), txtDescription.getText(), Double.parseDouble(txtUnitPrice.getText()), Integer.parseInt(txtQtyOnHand.getText()));
-        boolean isSaved = Database.itemList.add(item);
-        if(isSaved){
-            new Alert(Alert.AlertType.INFORMATION, "item Saved").show();
-        }else{
-            new Alert(Alert.AlertType.INFORMATION, "Something wrong !");
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/Thogakade", "root", "7911");
+            String sql = "INSERT INTO Item VALUES (?,?,?,?)";
+            PreparedStatement statement = connection.prepareStatement(sql);
+            statement.setString(1, item.getCode());
+            statement.setString(2, item.getDescription());
+            statement.setDouble(3, item.getUnitPrice());
+            statement.setInt(4, item.getQtyOnHand());
+            int isSaved = statement.executeUpdate();
+
+            if (isSaved > 0) {
+                clearField();
+                new Alert(Alert.AlertType.INFORMATION, "Item Saved").show();
+            } else {
+                new Alert(Alert.AlertType.WARNING, "Something Wrong!").show();
+            }
+
+
+        } catch (ClassNotFoundException | SQLException e) {
+            e.printStackTrace();
         }
 
     }

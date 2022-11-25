@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="250f04df-20ff-418f-842d-e907ae63962e" name="Changes" comment="done update query">
+    <list default="true" id="250f04df-20ff-418f-842d-e907ae63962e" name="Changes" comment="done search query">
+      <change afterPath="$PROJECT_DIR$/src/com/abcjava/pos/script.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/abcjava/pos/controller/CustomerManagementFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/abcjava/pos/controller/CustomerManagementFormController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Thogakade/com/abcjava/pos/controller/ItemManagementFormController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Thogakade/com/abcjava/pos/controller/ItemManagementFormController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/abcjava/pos/controller/ItemManagementFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/abcjava/pos/controller/ItemManagementFormController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,7 +51,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/com/abcjava/pos" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -60,6 +62,9 @@
     <property name="settings.editor.selected.configurable" value="configurable.group.other" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\course\FullStack\Code\JavaFX\App_Project2 - thogakade-with-mysql\src\com\abcjava\pos" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\course\java\Code\JavaFX\App_project\src\com\abcjava\pos\view" />
     </key>
@@ -150,7 +155,8 @@
       <workItem from="1669294808806" duration="1006000" />
       <workItem from="1669302694833" duration="2486000" />
       <workItem from="1669309783866" duration="1279000" />
-      <workItem from="1669350218681" duration="1478000" />
+      <workItem from="1669350218681" duration="2564000" />
+      <workItem from="1669363245155" duration="1979000" />
     </task>
     <task id="LOCAL-00001" summary="set ui for customer">
       <created>1667655387696</created>
@@ -481,7 +487,21 @@
       <option name="project" value="LOCAL" />
       <updated>1669311059141</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="done search query">
+      <created>1669353017245</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1669353017245</updated>
+    </task>
+    <task id="LOCAL-00049" summary="done search query">
+      <created>1669353310578</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1669353310578</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -499,7 +519,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="update customer from table" />
     <MESSAGE value="Add new customer to table" />
     <MESSAGE value="search customer from table" />
     <MESSAGE value="init item interface" />
@@ -524,6 +543,7 @@
     <MESSAGE value="3" />
     <MESSAGE value="done delete query" />
     <MESSAGE value="done update query" />
-    <option name="LAST_COMMIT_MESSAGE" value="done update query" />
+    <MESSAGE value="done search query" />
+    <option name="LAST_COMMIT_MESSAGE" value="done search query" />
   </component>
 </project>
