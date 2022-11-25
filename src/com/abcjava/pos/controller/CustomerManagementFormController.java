@@ -69,13 +69,17 @@ public class CustomerManagementFormController {
     }
 
     private void searchCustomers(String text) {
+        String searchText = "%"+text+"%";
+
         // set value to table
         ObservableList<CustomerTm> tmList = FXCollections.observableArrayList();
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/Thogakade", "root", "7911");
-            String sql = "SELECT * FROM Customer";
+            String sql = "SELECT * FROM Customer WHERE name LIKE ? || address LIKE ?";
             PreparedStatement statement = connection.prepareStatement(sql);
+            statement.setString(1,searchText);
+            statement.setString(2,searchText);
             ResultSet set = statement.executeQuery();
 
 
@@ -188,10 +192,10 @@ public class CustomerManagementFormController {
 
                 String sql = "UPDATE Customer SET name =?, address=?, salary=? WHERE id=?";
                 PreparedStatement statement = connection.prepareStatement(sql);
-                statement.setString(1,customer.getName());
-                statement.setString(2,customer.getAddress());
-                statement.setDouble(3,customer.getSalary());
-                statement.setString(4,customer.getId());
+                statement.setString(1,txtName.getText());
+                statement.setString(2,txtAddress.getText());
+                statement.setDouble(3, Double.parseDouble(txtSalary.getText()));
+                statement.setString(4,txtId.getText());
                 int isUpdated = statement.executeUpdate();
                 if(isUpdated > 0){
                     searchCustomers(searchText);
