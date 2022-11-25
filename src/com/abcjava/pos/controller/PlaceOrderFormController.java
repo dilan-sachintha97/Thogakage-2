@@ -17,6 +17,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.sql.*;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -110,15 +111,43 @@ public class PlaceOrderFormController {
 
 
     private void loadAllItemsCode() {
-        for (Item item : Database.itemList) {
-            cmbItemId.getItems().add(item.getCode());
+        try{
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/Thogakade", "root", "7911");
+            String sql = "SELECT code FROM Item";
+            PreparedStatement statement = connection.prepareStatement(sql);
+            ResultSet set = statement.executeQuery();
+
+            ArrayList<String> codeList = new ArrayList<>();
+            while (set.next()){
+                codeList.add(set.getString(1));
+            }
+            ObservableList<String> obListOfCode = FXCollections.observableArrayList(codeList);
+            cmbItemId.setItems(obListOfCode);
+
+        }catch (ClassNotFoundException | SQLException e){
+            e.printStackTrace();
         }
     }
 
     private void loadAllCustomersIds() {
-        for (Customer c : Database.customerList) {
-            cmbCustomerId.getItems().add(c.getId());
-        }
+       try{
+           Class.forName("com.mysql.cj.jdbc.Driver");
+           Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/Thogakade", "root", "7911");
+           String sql = "SELECT id FROM Customer";
+           PreparedStatement statement = connection.prepareStatement(sql);
+           ResultSet set = statement.executeQuery();
+
+           ArrayList<String> customerIdList = new ArrayList<>();
+           while (set.next()){
+               customerIdList.add(set.getString(1));
+           }
+           ObservableList<String> obListOfCustomerId = FXCollections.observableArrayList(customerIdList);
+           cmbCustomerId.setItems(obListOfCustomerId);
+
+       }catch (ClassNotFoundException | SQLException e){
+           e.printStackTrace();
+       }
     }
 
     private void setOrderDate() {
