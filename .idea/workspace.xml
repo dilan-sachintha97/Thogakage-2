@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="250f04df-20ff-418f-842d-e907ae63962e" name="Changes" comment="done item update">
+    <list default="true" id="250f04df-20ff-418f-842d-e907ae63962e" name="Changes" comment="done item search">
       <change beforePath="$PROJECT_DIR$/src/com/abcjava/pos/controller/ItemManagementFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/abcjava/pos/controller/ItemManagementFormController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -153,14 +153,7 @@
       <workItem from="1669302694833" duration="2486000" />
       <workItem from="1669309783866" duration="1279000" />
       <workItem from="1669350218681" duration="2564000" />
-      <workItem from="1669363245155" duration="5800000" />
-    </task>
-    <task id="LOCAL-00003" summary="1">
-      <created>1667663462749</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1667663462749</updated>
+      <workItem from="1669363245155" duration="6118000" />
     </task>
     <task id="LOCAL-00004" summary="2">
       <created>1667664566173</created>
@@ -498,7 +491,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669371278719</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="done item search">
+      <created>1669371561709</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1669371561709</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -516,7 +516,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="init item interface" />
     <MESSAGE value="completed item form" />
     <MESSAGE value="init Oder Place Form" />
     <MESSAGE value="add order date" />
@@ -541,6 +540,7 @@
     <MESSAGE value="done search query" />
     <MESSAGE value="done item saved" />
     <MESSAGE value="done item update" />
-    <option name="LAST_COMMIT_MESSAGE" value="done item update" />
+    <MESSAGE value="done item search" />
+    <option name="LAST_COMMIT_MESSAGE" value="done item search" />
   </component>
 </project>

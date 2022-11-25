@@ -140,6 +140,35 @@ public class ItemManagementFormController {
                         set.getInt(4),
                         button);
                 tmList.add(itemTm);
+
+                button.setOnAction(event -> {
+                    // System.out.println(c.getName());
+                    Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "Are you sure  want to delete this customer ?",
+                            ButtonType.YES, ButtonType.NO);
+                    Optional<ButtonType> buttonType = alert.showAndWait();
+                    if (buttonType.get() == ButtonType.YES) {
+
+                        try{
+                            Class.forName("com.mysql.cj.jdbc.Driver");
+                            Connection connection1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/Thogakade", "root", "7911");
+                            String sql1 = "DELETE FROM Item WHERE code=?";
+                            PreparedStatement statement1 = connection1.prepareStatement(sql1);
+                            statement1.setString(1,itemTm.getCode());
+
+                            if(statement1.executeUpdate() > 0){
+                                 setDataToTable(text);
+                                new Alert(Alert.AlertType.INFORMATION, "Item Deleted").show();
+                            }else {
+                                new Alert(Alert.AlertType.WARNING, "Something Wrong!").show();
+                            }
+
+                        }catch (ClassNotFoundException | SQLException e){
+                            e.printStackTrace();
+                        }
+
+                    }
+
+                });
             }
 
 
