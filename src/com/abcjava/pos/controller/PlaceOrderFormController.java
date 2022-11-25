@@ -89,7 +89,8 @@ public class PlaceOrderFormController {
     }
 
     private void setItemDetailsToTextFields() {
-        try{Class.forName("com.mysql.cj.jdbc.Driver");
+        try{
+            Class.forName("com.mysql.cj.jdbc.Driver");
             Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/Thogakade", "root", "7911");
             String sql = "SELECT * FROM Item WHERE code=?";
             PreparedStatement statement = connection.prepareStatement(sql);
@@ -179,14 +180,25 @@ public class PlaceOrderFormController {
     }
 
     private boolean checkQty(String code, int qty){
-        for(Item i: Database.itemList){
-            if(code.equals(i.getCode())){
-                if(i.getQtyOnHand()>= qty){
-                    return true;
-                }
-            }
-        }
-        return false;
+       try{
+           Class.forName("com.mysql.cj.jdbc.Driver");
+           Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/Thogakade", "root", "7911");
+           String sql = "SELECT qtyOnhand FROM Item WHERE code=?";
+           PreparedStatement statement = connection.prepareStatement(sql);
+           statement.setString(1,code);
+           ResultSet set = statement.executeQuery();
+
+           if(set.next()){
+               int tempQty = set.getInt(1);
+               if(tempQty>=qty){
+                   return true;
+               }
+           }
+
+       }catch (Exception e){
+           e.printStackTrace();
+       }
+       return false;
     }
     ObservableList<CartTm> obList = FXCollections.observableArrayList();
     public void btnAddToCartOnAction(ActionEvent actionEvent) {
@@ -277,7 +289,30 @@ public class PlaceOrderFormController {
                 cmbCustomerId.getValue(),
                 itemDetailsList);
 
-        ordersList.add(order);
+        try{
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/Thogakade", "root", "7911");
+            String sql = "INSERT INTO `Order` VALUES (?,?,?,?)";
+            PreparedStatement statement = connection.prepareStatement(sql);
+            statement.setString(1, order.getOrderId());
+            statement.setString(2, txtOrderDate.getText());
+            statement.setDouble(3, order.getTotalCost());
+            statement.setString(4, order.getCustomer());
+
+            boolean isOderSaved = statement.executeUpdate() > 0;
+
+            if(isOderSaved){
+                //manageQty();
+                clearAll();
+            }else {
+                new Alert(Alert.AlertType.WARNING,"Try Again !").show();
+            }
+
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
         manageQty();
         clearAll();
     }

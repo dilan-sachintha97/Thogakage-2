@@ -8,6 +8,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Thogakade/com/abcjava/pos/controller/PlaceOrderFormController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Thogakade/com/abcjava/pos/controller/PlaceOrderFormController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/abcjava/pos/controller/PlaceOrderFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/abcjava/pos/controller/PlaceOrderFormController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/abcjava/pos/script.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/abcjava/pos/script.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -155,14 +156,7 @@
       <workItem from="1669302694833" duration="2486000" />
       <workItem from="1669309783866" duration="1279000" />
       <workItem from="1669350218681" duration="2564000" />
-      <workItem from="1669363245155" duration="9052000" />
-    </task>
-    <task id="LOCAL-00006" summary="4">
-      <created>1667669506130</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1667669506130</updated>
+      <workItem from="1669363245155" duration="13775000" />
     </task>
     <task id="LOCAL-00007" summary="5">
       <created>1667670300440</created>
@@ -500,7 +494,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669374043760</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
+    <task id="LOCAL-00055" summary="set id, code to comboBox">
+      <created>1669375005181</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1669375005181</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
