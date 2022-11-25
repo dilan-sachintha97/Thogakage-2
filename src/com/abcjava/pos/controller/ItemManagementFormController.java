@@ -122,11 +122,13 @@ public class ItemManagementFormController {
     private void setDataToTable(String text) {
         ObservableList<ItemTm> tmList = FXCollections.observableArrayList();
         //search
+        String searchText = "%"+text+"%";
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/Thogakade", "root", "7911");
-            String sql = "SELECT * FROM Item";
+            String sql = "SELECT * FROM Item WHERE description LIKE ?";
             PreparedStatement statement = connection.prepareStatement(sql);
+            statement.setString(1,searchText);
             ResultSet set = statement.executeQuery();
 
             while (set.next()){
