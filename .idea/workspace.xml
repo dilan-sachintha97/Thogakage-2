@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="250f04df-20ff-418f-842d-e907ae63962e" name="Changes" comment="done place oder">
+    <list default="true" id="250f04df-20ff-418f-842d-e907ae63962e" name="Changes" comment="done order details save">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Thogakade/com/abcjava/pos/controller/PlaceOrderFormController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Thogakade/com/abcjava/pos/controller/PlaceOrderFormController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/abcjava/pos/controller/PlaceOrderFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/abcjava/pos/controller/PlaceOrderFormController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/abcjava/pos/script.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/abcjava/pos/script.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -156,14 +154,8 @@
       <workItem from="1669302694833" duration="2486000" />
       <workItem from="1669309783866" duration="1279000" />
       <workItem from="1669350218681" duration="2564000" />
-      <workItem from="1669363245155" duration="20687000" />
-    </task>
-    <task id="LOCAL-00008" summary="6">
-      <created>1667672422886</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1667672422886</updated>
+      <workItem from="1669363245155" duration="22172000" />
+      <workItem from="1669563563476" duration="1232000" />
     </task>
     <task id="LOCAL-00009" summary="delete customer from table">
       <created>1667709082884</created>
@@ -501,7 +493,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669382627841</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="done order details save">
+      <created>1669519910027</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1669519910027</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -519,7 +518,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="5" />
     <MESSAGE value="6" />
     <MESSAGE value="7" />
     <MESSAGE value="8" />
@@ -544,6 +542,7 @@
     <MESSAGE value="done item delete" />
     <MESSAGE value="set id, code to comboBox" />
     <MESSAGE value="done place oder" />
-    <option name="LAST_COMMIT_MESSAGE" value="done place oder" />
+    <MESSAGE value="done order details save" />
+    <option name="LAST_COMMIT_MESSAGE" value="done order details save" />
   </component>
 </project>

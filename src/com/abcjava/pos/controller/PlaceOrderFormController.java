@@ -77,15 +77,29 @@ public class PlaceOrderFormController {
     }
 
     private void setOrderId() {
-        if(Database.ordersList.isEmpty()){
-            txtOrderId.setText("D-1");
-            return;
+        try{
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/Thogakade", "root", "7911");
+            String sql = "SELECT orderId FROM `Order` ORDER BY orderId DESC LIMIT 1";  //10 not working (UNSIGN use)
+            PreparedStatement statement = connection.prepareStatement(sql);
+            ResultSet set = statement.executeQuery();
+
+            if(set.next()){
+                String tempOrderId = set.getString(1);
+                String[] numArray = tempOrderId.split("-"); //  [D,5]
+                int numPart = Integer.parseInt(numArray[1]);  //   5
+                int finalizeNumberOfOderId = numPart+1;
+                txtOrderId.setText("D-" + finalizeNumberOfOderId);
+
+            }else{
+                txtOrderId.setText("D-1");
+                return;
+            }
+
+        }catch (SQLException | ClassNotFoundException e){
+            e.printStackTrace();
         }
-        String tempOrderId = Database.ordersList.get(Database.ordersList.size()-1).getOrderId(); //  D-5
-        String[] numArray = tempOrderId.split("-"); //  [D,5]
-        int numPart = Integer.parseInt(numArray[1]);  //   5
-        int finalizeNumberOfOderId = numPart+1;
-        txtOrderId.setText("D-" + finalizeNumberOfOderId);
+
     }
 
     private void setItemDetailsToTextFields() {
