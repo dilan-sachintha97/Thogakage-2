@@ -1,7 +1,7 @@
 SHOW DATABASES;
 CREATE DATABASE IF NOT EXISTS Thogakade;
 USE Thogakade;
-//#===============================
+#===============================
 CREATE TABLE Customer(
     id VARCHAR(45) NOT NULL ,
     name VARCHAR(50) NOT NULL ,
@@ -40,3 +40,18 @@ CREATE TABLE IF NOT EXISTS `Order`(
 );
 
 DESC `Order`;
+
+#==================================
+CREATE TABLE IF NOT EXISTS `Order Details`(
+    itemCode VARCHAR(45),
+    orderId VARCHAR(45),
+    unitPrice DOUBLE,
+    qty INT,
+    CONSTRAINT PRIMARY KEY (itemCode,orderId),
+    CONSTRAINT FOREIGN KEY (itemCode) REFERENCES Item(code) ON DELETE CASCADE ON UPDATE CASCADE ,
+    CONSTRAINT FOREIGN KEY (orderId) REFERENCES `Order`(orderId) ON DELETE CASCADE On UPDATE CASCADE
+
+);
+
+DESC `Order Details`
+
