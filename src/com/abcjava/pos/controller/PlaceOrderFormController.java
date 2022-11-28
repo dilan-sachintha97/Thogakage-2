@@ -279,7 +279,7 @@ public class PlaceOrderFormController {
         lblTotal.setText(String.valueOf(total));
     }
 
-    public void btnPlaceOrderOnAction(ActionEvent actionEvent) {
+    public void btnPlaceOrderOnAction(ActionEvent actionEvent) throws SQLException {
         if (obList.isEmpty()) return;  // obList ak empty nam JVM aka methanin ehata yanna apa
         ArrayList<ItemDetails> itemDetailsList = new ArrayList<>();
         for (CartTm cartTm : obList) {
@@ -293,9 +293,19 @@ public class PlaceOrderFormController {
                 cmbCustomerId.getValue(),
                 itemDetailsList);
 
+
+        //place order
+        Connection con = null;
         try{
+
+            con = DBConnection.getInstance().getConnection();
+            con.setAutoCommit(false);
+
             String sql = "INSERT INTO `Order` VALUES (?,?,?,?)";
-            PreparedStatement statement = DBConnection.getInstance().getConnection().prepareStatement(sql);
+
+           // PreparedStatement statement = DBConnection.getInstance().getConnection().prepareStatement(sql);
+            PreparedStatement statement = con.prepareStatement(sql);
+
             statement.setString(1, order.getOrderId());
             statement.setString(2, txtOrderDate.getText());
             statement.setDouble(3, order.getTotalCost());
@@ -306,19 +316,26 @@ public class PlaceOrderFormController {
             if(isOderSaved){
                 boolean isAllUpdated = manageQty(itemDetailsList);
                 if(isAllUpdated){
+                    con.commit();
                     new Alert(Alert.AlertType.CONFIRMATION,"Order Placed !").show();
                     clearAll();
                 }else {
+                    con.setAutoCommit(true);
+                    con.rollback();
                     new Alert(Alert.AlertType.WARNING,"Try Again !").show();
                 }
 
             }else {
+                con.setAutoCommit(true);
+                con.rollback();
                 new Alert(Alert.AlertType.WARNING,"Try Again !").show();
             }
 
 
         }catch (Exception e){
             e.printStackTrace();
+        }finally {
+            con.setAutoCommit(true);
         }
 
     }

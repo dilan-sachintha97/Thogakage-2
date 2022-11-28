@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="250f04df-20ff-418f-842d-e907ae63962e" name="Changes" comment="applied singleton to DBConnection class">
+    <list default="true" id="250f04df-20ff-418f-842d-e907ae63962e" name="Changes" comment="updated project with singleton">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/abcjava/pos/controller/CustomerManagementFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/abcjava/pos/controller/CustomerManagementFormController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/abcjava/pos/controller/ItemManagementFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/abcjava/pos/controller/ItemManagementFormController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Thogakade/com/abcjava/pos/controller/CustomerManagementFormController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Thogakade/com/abcjava/pos/controller/CustomerManagementFormController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Thogakade/com/abcjava/pos/controller/ItemManagementFormController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Thogakade/com/abcjava/pos/controller/ItemManagementFormController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/abcjava/pos/controller/PlaceOrderFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/abcjava/pos/controller/PlaceOrderFormController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -51,7 +51,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/com/abcjava/pos" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../msql_java/App_15 .4" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -159,14 +159,8 @@
       <workItem from="1669350218681" duration="2564000" />
       <workItem from="1669363245155" duration="22172000" />
       <workItem from="1669563563476" duration="1563000" />
-      <workItem from="1669633107400" duration="2669000" />
-    </task>
-    <task id="LOCAL-00011" summary="Add new customer to table">
-      <created>1667721723965</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1667721723965</updated>
+      <workItem from="1669633107400" duration="3603000" />
+      <workItem from="1669637687458" duration="1107000" />
     </task>
     <task id="LOCAL-00012" summary="search customer from table">
       <created>1667723566445</created>
@@ -504,7 +498,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669634880019</updated>
     </task>
-    <option name="localTasksCounter" value="60" />
+    <task id="LOCAL-00060" summary="updated project with singleton">
+      <created>1669636153919</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1669636153919</updated>
+    </task>
+    <option name="localTasksCounter" value="61" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -522,7 +523,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="8" />
     <MESSAGE value="done place oder function" />
     <MESSAGE value="set qty function" />
     <MESSAGE value="set oder id" />
@@ -547,6 +547,7 @@
     <MESSAGE value="done order details save" />
     <MESSAGE value="set oderId" />
     <MESSAGE value="applied singleton to DBConnection class" />
-    <option name="LAST_COMMIT_MESSAGE" value="applied singleton to DBConnection class" />
+    <MESSAGE value="updated project with singleton" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated project with singleton" />
   </component>
 </project>
