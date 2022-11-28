@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="250f04df-20ff-418f-842d-e907ae63962e" name="Changes" comment="set oderId">
-      <change afterPath="$PROJECT_DIR$/src/com/abcjava/pos/db/DBConnection.java" afterDir="false" />
+    <list default="true" id="250f04df-20ff-418f-842d-e907ae63962e" name="Changes" comment="applied singleton to DBConnection class">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Thogakade/com/abcjava/pos/controller/PlaceOrderFormController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Thogakade/com/abcjava/pos/controller/PlaceOrderFormController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/abcjava/pos/script.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/abcjava/pos/db/script.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/abcjava/pos/controller/CustomerManagementFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/abcjava/pos/controller/CustomerManagementFormController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/abcjava/pos/controller/ItemManagementFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/abcjava/pos/controller/ItemManagementFormController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/abcjava/pos/controller/PlaceOrderFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/abcjava/pos/controller/PlaceOrderFormController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -159,14 +159,7 @@
       <workItem from="1669350218681" duration="2564000" />
       <workItem from="1669363245155" duration="22172000" />
       <workItem from="1669563563476" duration="1563000" />
-      <workItem from="1669633107400" duration="1544000" />
-    </task>
-    <task id="LOCAL-00010" summary="update customer from table">
-      <created>1667718693228</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1667718693228</updated>
+      <workItem from="1669633107400" duration="2669000" />
     </task>
     <task id="LOCAL-00011" summary="Add new customer to table">
       <created>1667721723965</created>
@@ -504,7 +497,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669565087328</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00059" summary="applied singleton to DBConnection class">
+      <created>1669634880017</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1669634880019</updated>
+    </task>
+    <option name="localTasksCounter" value="60" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -522,7 +522,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="7" />
     <MESSAGE value="8" />
     <MESSAGE value="done place oder function" />
     <MESSAGE value="set qty function" />
@@ -547,6 +546,7 @@
     <MESSAGE value="done place oder" />
     <MESSAGE value="done order details save" />
     <MESSAGE value="set oderId" />
-    <option name="LAST_COMMIT_MESSAGE" value="set oderId" />
+    <MESSAGE value="applied singleton to DBConnection class" />
+    <option name="LAST_COMMIT_MESSAGE" value="applied singleton to DBConnection class" />
   </component>
 </project>

@@ -1,5 +1,6 @@
 package com.abcjava.pos.controller;
 
+import com.abcjava.pos.db.DBConnection;
 import com.abcjava.pos.db.Database;
 import com.abcjava.pos.modal.Customer;
 import com.abcjava.pos.view.tm.CustomerTm;
@@ -74,10 +75,8 @@ public class CustomerManagementFormController {
         // set value to table
         ObservableList<CustomerTm> tmList = FXCollections.observableArrayList();
         try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/Thogakade", "root", "7911");
             String sql = "SELECT * FROM Customer WHERE name LIKE ? || address LIKE ?";
-            PreparedStatement statement = connection.prepareStatement(sql);
+            PreparedStatement statement = DBConnection.getInstance().getConnection().prepareStatement(sql);
             statement.setString(1,searchText);
             statement.setString(2,searchText);
             ResultSet set = statement.executeQuery();
@@ -102,10 +101,8 @@ public class CustomerManagementFormController {
                     if (buttonType.get() == ButtonType.YES) {
 
                         try{
-                            Class.forName("com.mysql.cj.jdbc.Driver");
-                            Connection connection1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/Thogakade", "root", "7911");
                             String sql1 = "DELETE FROM Customer WHERE id=?";
-                            PreparedStatement statement1 = connection1.prepareStatement(sql1);
+                            PreparedStatement statement1 = DBConnection.getInstance().getConnection().prepareStatement(sql1);
                             statement1.setString(1,customerTm.getId());
 
                             if(statement1.executeUpdate() > 0){
@@ -147,20 +144,8 @@ public class CustomerManagementFormController {
             //Save customer in database - mySQl
 
             try {
-                //step 01 -> driver manager load to ram
-                Class.forName("com.mysql.cj.jdbc.Driver");
-
-                //step 02 -> create connection between javaApplication and mySql
-                Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/Thogakade", "root", "7911");
-
-                //step 03 -> create statement
-                //Statement statement  = connection.createStatement();
-
-                //step 04 -> create query to statement
-               // String sql = "INSERT INTO Customer VALUES('"+customer.getId()+"','"+customer.getName()+"','"+customer.getAddress()+"','"+customer.getSalary()+"')";
-
                 String sql = "INSERT INTO Customer VALUES (?,?,?,?)";
-                PreparedStatement statement = connection.prepareStatement(sql);
+                PreparedStatement statement = DBConnection.getInstance().getConnection().prepareStatement(sql);
                 statement.setString(1,customer.getId());
                 statement.setString(2,customer.getName());
                 statement.setString(3,customer.getAddress());
@@ -187,11 +172,8 @@ public class CustomerManagementFormController {
             //update customer
 
             try{
-                Class.forName("com.mysql.cj.jdbc.Driver");
-                Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/Thogakade", "root", "7911");
-
                 String sql = "UPDATE Customer SET name =?, address=?, salary=? WHERE id=?";
-                PreparedStatement statement = connection.prepareStatement(sql);
+                PreparedStatement statement = DBConnection.getInstance().getConnection().prepareStatement(sql);
                 statement.setString(1,txtName.getText());
                 statement.setString(2,txtAddress.getText());
                 statement.setDouble(3, Double.parseDouble(txtSalary.getText()));

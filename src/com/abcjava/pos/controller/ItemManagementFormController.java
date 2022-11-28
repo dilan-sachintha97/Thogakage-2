@@ -1,5 +1,6 @@
 package com.abcjava.pos.controller;
 
+import com.abcjava.pos.db.DBConnection;
 import com.abcjava.pos.db.Database;
 import com.abcjava.pos.modal.Item;
 import com.abcjava.pos.view.tm.ItemTm;
@@ -85,10 +86,8 @@ public class ItemManagementFormController {
             clearField();
         }else{
             try {
-                Class.forName("com.mysql.cj.jdbc.Driver");
-                Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/Thogakade", "root", "7911");
                 String sql = "UPDATE Item SET description =?, unitPrice=?, qtyOnHand=? WHERE code=?";
-                PreparedStatement statement = connection.prepareStatement(sql);
+                PreparedStatement statement = DBConnection.getInstance().getConnection().prepareStatement(sql);
 
                 statement.setString(1, txtDescription.getText());
                 statement.setDouble(2, Double.parseDouble(txtUnitPrice.getText()));
@@ -124,10 +123,8 @@ public class ItemManagementFormController {
         //search
         String searchText = "%"+text+"%";
         try{
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/Thogakade", "root", "7911");
             String sql = "SELECT * FROM Item WHERE description LIKE ?";
-            PreparedStatement statement = connection.prepareStatement(sql);
+            PreparedStatement statement = DBConnection.getInstance().getConnection().prepareStatement(sql);
             statement.setString(1,searchText);
             ResultSet set = statement.executeQuery();
 
@@ -149,10 +146,8 @@ public class ItemManagementFormController {
                     if (buttonType.get() == ButtonType.YES) {
 
                         try{
-                            Class.forName("com.mysql.cj.jdbc.Driver");
-                            Connection connection1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/Thogakade", "root", "7911");
                             String sql1 = "DELETE FROM Item WHERE code=?";
-                            PreparedStatement statement1 = connection1.prepareStatement(sql1);
+                            PreparedStatement statement1 = DBConnection.getInstance().getConnection().prepareStatement(sql1);
                             statement1.setString(1,itemTm.getCode());
 
                             if(statement1.executeUpdate() > 0){
@@ -183,10 +178,8 @@ public class ItemManagementFormController {
     private void setDataToDatabase() {
         Item item = new Item(txtCode.getText(), txtDescription.getText(), Double.parseDouble(txtUnitPrice.getText()), Integer.parseInt(txtQtyOnHand.getText()));
         try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/Thogakade", "root", "7911");
             String sql = "INSERT INTO Item VALUES (?,?,?,?)";
-            PreparedStatement statement = connection.prepareStatement(sql);
+            PreparedStatement statement = DBConnection.getInstance().getConnection().prepareStatement(sql);
             statement.setString(1, item.getCode());
             statement.setString(2, item.getDescription());
             statement.setDouble(3, item.getUnitPrice());
