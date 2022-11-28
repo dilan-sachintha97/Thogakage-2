@@ -1,5 +1,6 @@
 package com.abcjava.pos.controller;
 
+import com.abcjava.pos.db.DBConnection;
 import com.abcjava.pos.db.Database;
 import com.abcjava.pos.modal.ItemDetails;
 import com.abcjava.pos.modal.Order;
@@ -16,6 +17,8 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 
 public class ItemDetailsFormController {
     public TableView<ItemDetailsTm> tblItemDetails;
@@ -33,22 +36,31 @@ public class ItemDetailsFormController {
     }
 
     public void loadItemDetails(String oderId){
-        for(Order order : Database.ordersList){
-            if(order.getOrderId().equals(oderId)){
-                ObservableList<ItemDetailsTm> obsItemList = FXCollections.observableArrayList();
 
-                for(ItemDetails item : order.getItemDetails()){
-                    double tempUnitPrice = item.getUnitPrice();
-                    int tempQtyOnHand = item.getQty();
-                    double tempTotal = tempQtyOnHand * tempUnitPrice;
-                    ItemDetailsTm itemDetailsTm = new ItemDetailsTm(item.getCode(),item.getUnitPrice(),item.getQty(),tempTotal);
+        try{
+            String sql = "SELECT o.orderid, d.itemCode, d.orderId, d.unitprice, d.qty"+
+                    " FROM `Order` o INNER JOIN  `Order Details` d ON o.orderId=d.orderId AND o.orderId=?";
+            PreparedStatement statement = DBConnection.getInstance().getConnection().prepareStatement(sql);
+            statement.setString(1,oderId);
+            ResultSet set = statement.executeQuery();
 
-                    obsItemList.add(itemDetailsTm);
-                }
-                tblItemDetails.setItems(obsItemList);
-                return;
+            ObservableList<ItemDetailsTm> obsItemList = FXCollections.observableArrayList();
+            while (set.next()){
+                double tempUnitPrice = set.getDouble(4);
+                int tempQtyOnHand = set.getInt(5);
+                double tempTotal = tempQtyOnHand * tempUnitPrice;
+
+                ItemDetailsTm itemDetailsTm = new ItemDetailsTm(set.getString(2),tempUnitPrice,tempQtyOnHand,tempTotal);
+                obsItemList.add(itemDetailsTm);
             }
+            tblItemDetails.setItems(obsItemList);
+
+
+        }catch (Exception e){
+            e.printStackTrace();
         }
+
+
     }
 
     public void btnBackToHomeOnAction(ActionEvent actionEvent) throws IOException {

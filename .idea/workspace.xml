@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="250f04df-20ff-418f-842d-e907ae63962e" name="Changes" comment="added transaction">
+    <list default="true" id="250f04df-20ff-418f-842d-e907ae63962e" name="Changes" comment="1">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Thogakade/com/abcjava/pos/controller/PlaceOrderFormController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Thogakade/com/abcjava/pos/controller/PlaceOrderFormController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/abcjava/pos/controller/OderDetailsFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/abcjava/pos/controller/OderDetailsFormController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Thogakade/com/abcjava/pos/controller/OderDetailsFormController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Thogakade/com/abcjava/pos/controller/OderDetailsFormController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/abcjava/pos/controller/ItemDetailsFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/abcjava/pos/controller/ItemDetailsFormController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -159,14 +159,7 @@
       <workItem from="1669363245155" duration="22172000" />
       <workItem from="1669563563476" duration="1563000" />
       <workItem from="1669633107400" duration="3603000" />
-      <workItem from="1669637687458" duration="3003000" />
-    </task>
-    <task id="LOCAL-00013" summary="init item interface">
-      <created>1667991577083</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1667991577083</updated>
+      <workItem from="1669637687458" duration="4673000" />
     </task>
     <task id="LOCAL-00014" summary="1">
       <created>1668005854657</created>
@@ -504,7 +497,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669638851350</updated>
     </task>
-    <option name="localTasksCounter" value="62" />
+    <task id="LOCAL-00062" summary="1">
+      <created>1669641666914</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1669641666914</updated>
+    </task>
+    <option name="localTasksCounter" value="63" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -530,7 +530,6 @@
     <MESSAGE value="completed project" />
     <MESSAGE value="mysql connector added" />
     <MESSAGE value="done sql connection" />
-    <MESSAGE value="1" />
     <MESSAGE value="2" />
     <MESSAGE value="3" />
     <MESSAGE value="done delete query" />
@@ -547,6 +546,7 @@
     <MESSAGE value="applied singleton to DBConnection class" />
     <MESSAGE value="updated project with singleton" />
     <MESSAGE value="added transaction" />
-    <option name="LAST_COMMIT_MESSAGE" value="added transaction" />
+    <MESSAGE value="1" />
+    <option name="LAST_COMMIT_MESSAGE" value="1" />
   </component>
 </project>
