@@ -1,5 +1,6 @@
 package com.abcjava.pos.controller;
 
+import com.abcjava.pos.db.DBConnection;
 import com.abcjava.pos.db.Database;
 import com.abcjava.pos.modal.Order;
 import com.abcjava.pos.view.tm.OderTm;
@@ -18,6 +19,9 @@ import javafx.stage.Stage;
 import javafx.stage.Window;
 
 import java.io.IOException;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.Date;
 
 public class OderDetailsFormController {
@@ -42,28 +46,42 @@ public class OderDetailsFormController {
     }
 
     private void loadOrders() {
-        ObservableList<OderTm> obsOderList = FXCollections.observableArrayList();
-        for(Order order : Database.ordersList){
-            Button btn = new Button("View more");
-            OderTm oderTm = new OderTm(order.getOrderId(), order.getCustomer(), order.getDate(), order.getTotalCost(),btn);
-            obsOderList.add(oderTm);
+        try{
+            String sql = "SELECT * FROM `Order`";
+            PreparedStatement statement = DBConnection.getInstance().getConnection().prepareStatement(sql);
+            ResultSet set = statement.executeQuery();
 
-            btn.setOnAction(event -> {
-                try {
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/ItemDetailsForm.fxml"));
-                    Parent parent = loader.load();
-                    ItemDetailsFormController controller = loader.getController();
-                    controller.loadItemDetails(oderTm.getOderId());
-                    Stage stage = new Stage();
-                    stage.setScene(new Scene(parent));
-                    stage.show();
+            ObservableList<OderTm> obsOderList = FXCollections.observableArrayList();
+            while (set.next()){
 
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            });
+                Button btn = new Button("View more");
+
+                OderTm oderTm = new OderTm(set.getString(1),
+                       set.getString(4),
+                        new Date(),  //set.getString(2)
+                        set.getDouble(3),
+                        btn);
+                obsOderList.add(oderTm);
+
+                btn.setOnAction(event -> {
+                    try {
+                        FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/ItemDetailsForm.fxml"));
+                        Parent parent = loader.load();
+                        ItemDetailsFormController controller = loader.getController();
+                        controller.loadItemDetails(oderTm.getOderId());
+                        Stage stage = new Stage();
+                        stage.setScene(new Scene(parent));
+                        stage.show();
+
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                });
+            }
+            tblOderDetails.setItems(obsOderList);
+        }catch (SQLException | ClassNotFoundException e){
+            e.printStackTrace();
         }
-        tblOderDetails.setItems(obsOderList);
     }
 
     public void btnBackToHomeOnAction(ActionEvent actionEvent) throws IOException {
